@@ -11,7 +11,7 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 
 config=configparser.ConfigParser()
-config.read('Eventcfg.ini')
+config.read('EventcfgMan.ini')
 # Source="ITRS"
 # nodes=["813736b5841c.mylabserver.com", "813736b5842c.mylabserver.com"]
 # nodechoice=argv[1]
@@ -26,7 +26,7 @@ config.read('Eventcfg.ini')
 
 # severity=choice(['Critical'])
 
-payload={"records":[{"source":config['Event Details']['source'], "event_class":"PROM 2012 on prom.server.com","node":config['Event Details']['node'],"metric_name":config['Event Details']['metric'], "severity":config['Event Details']['severity'], "description":config['Event Details']['description'],"additional_info": {"prom-severity": "High", "os_type":"RedHat Enterprise linux 8"}}]}
+payload={"records":[{"source":config['Event Details']['source'], "event_class":config['Event Details']['source']+" 10.0.0.4","node":config['Event Details']['node'],"metric_name":config['Event Details']['metric'], "severity":config['Event Details']['severity'], "description":config['Event Details']['description'],"additional_info": {"prom-severity": "High", "os_type":"RedHat Enterprise linux 8"}}]}
 print(payload)
 
 url=str(config['ServiceNow Instance']['url']+config['ServiceNow Instance']['api_path'])
