@@ -44,5 +44,5 @@ else:
 print(url)
 
 headers={"Content-Type": "application/json"}
-response = post(url, data=str(payload), headers=headers, verify='../Certificates/cert.pem', auth=HTTPBasicAuth('rghosh','Turtle$123'))
+response = post(url, data=str(payload), headers=headers, verify='../Certificates/cert.pem', auth=HTTPBasicAuth('test','test'))
 print(response.text)
