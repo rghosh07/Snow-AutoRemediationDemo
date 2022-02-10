@@ -31,7 +31,18 @@ os_type = choice(["RedHat Enterprise linux 8", "RedHat Enterprise linux 7", "Red
 payload={"records":[{"source":source, "event_class":source+" 10.0.0.4","node":node,"metric_name":metric, "severity":severity, "description":description,"additional_info": {"example01_additional_info": exAdd01,"example02_additional_info": exAdd02, "os_type":os_type}}]}
 print("\n",payload,"\n")
 
-url=str(config['ServiceNow Instance']['url']+config['ServiceNow Instance']['api_path'])
+if config['ServiceNow Instance'].getboolean('midserver_event_collection'):
+    url="http://{}:{}/api/mid/em/jsonv2".format(config['ServiceNow Instance']['mid_ip'],config['ServiceNow Instance']['mid_port'])
+
+elif not config['ServiceNow Instance'].getboolean('midserver_event_collection'):
+    url="https://{}.service-now.com/api/global/em/jsonv2".format(config['ServiceNow Instance']['yourInstance'])
+
+else:
+    print("Error: midserver_event_collection parameter not confuigured correctly")
+    exit(1)
+
+print(url)
+
 headers={"Content-Type": "application/json"}
 response = post(url, data=str(payload), headers=headers, verify=False, auth=HTTPBasicAuth('rghosh','Turtle$123'))
 print(response.text)
