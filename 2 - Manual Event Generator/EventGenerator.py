@@ -1,13 +1,17 @@
 
 from random import choice
-from sys import argv
+# from sys import argv
 from requests import post
 from requests.auth import HTTPBasicAuth
 import configparser
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 config=configparser.ConfigParser()
 config.read('Eventcfg.ini')
-
 # Source="ITRS"
 # nodes=["813736b5841c.mylabserver.com", "813736b5842c.mylabserver.com"]
 # nodechoice=argv[1]
