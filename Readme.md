@@ -1,6 +1,6 @@
 !!!WELCOME!!!
 
-This repository contains many project files and undertakings as part of Learning and Experiment on Service Now (hereby reffered to as snow) Orchestration and Automated Incident Handling.
+This repository contains many project files and undertakings as part of Learning and Experiment on Service Now (hereby reffered to as snow) Orchestration and Automated Incident Handling. There are reusable code in the folders to automate the flow of events into a servicenow instance (configurable. right now pointing to a developer instance) and the update sets folder contain the cml files with different flows written to automate playbook running on servers.
 
 1 - Automated Event Generator
 
