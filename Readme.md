@@ -17,10 +17,12 @@ Target systems - remotews02.southindia.cloudapp.azure.com, remotews03.southindia
 
 
 3. Configuring the INI Files
+
 Inside the folders 1 and 2 there are ini files named "EventcfgAuto.ini" and "EventcfgMan.ini". These values can be changed to get desired type of simulated events into your instance.
 There are currently two REST ways to push the Events 
 
 a) Through MID Server - https://docs.servicenow.com/bundle/sandiego-it-operations-management/page/product/event-management/task/send-events-via-web-service.html\
+
 b) Directly to the instance - https://docs.servicenow.com/bundle/sandiego-it-operations-management/page/product/event-management/concept/event-collection-via-MID-using-push.html\
 
 The automated approach uses opt (a) and Manual one uses opt (b)
@@ -28,7 +30,8 @@ Instructions to configure the ini files are given as comments in the files
 
 
 
-2. Folder Contents
+
+4. Folder Contents
 
 "1 - Automated Event Generator"
 
