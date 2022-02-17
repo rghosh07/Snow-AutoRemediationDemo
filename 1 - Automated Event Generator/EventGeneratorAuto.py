@@ -42,8 +42,7 @@ else:
     exit(1)
 
 print(url)
-cert=("cert.pem", "key.pem")
 headers={"Content-Type": "application/json"}
 
-response = post(url, data=str(payload), headers=headers, cert=cert, auth=HTTPBasicAuth('test','test'))
+response = post(url, data=str(payload), headers=headers, auth=HTTPBasicAuth('test','test'))
 print(response.text)
